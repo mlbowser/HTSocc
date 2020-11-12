@@ -1,0 +1,1 @@
+pandoc *.md --filter pandoc-citeproc -o manuscript.docx
