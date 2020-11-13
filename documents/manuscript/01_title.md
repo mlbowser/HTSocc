@@ -3,6 +3,6 @@ title: Documenting distributions of hyperdiverse groups (terrestrial invertebrat
 language: en-US
 bibliography: bibliography.bib
 link-citations: true
-csl: genome.csl
+csl: conservation-biology.csl
 numbersections: false
 ...

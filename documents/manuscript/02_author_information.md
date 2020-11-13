@@ -1,5 +1,5 @@
 
-## Author Information
+# Author Information
 
 **Matthew L. Bowser,<sup>\*</sup> John M. Morton**
 

@@ -1,1 +1,1 @@
-pandoc *.md --filter pandoc-citeproc -o manuscript.docx
+pandoc *.md --filter pandoc-citeproc --reference-doc=custom-reference.docx -o manuscript.docx
