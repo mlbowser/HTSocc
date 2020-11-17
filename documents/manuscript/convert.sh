@@ -8,11 +8,14 @@ pandoc 01_title.md \
 08_discussion.md \
 10_acknowledgments.md \
 11_references.md \
- --filter pandoc-citeproc --reference-doc=custom-reference.docx -o manuscript_01.docx
+ --filter pandoc-citeproc -o manuscript_01.md -t gfm -s
 
-pandoc 13_figures_and_figure_captions.md --reference-doc=custom-reference.docx -o manuscript_02.docx
+pandoc 13_figures_and_figure_captions.md -o manuscript_02.md -t gfm -s
 
-pandoc manuscript_01.docx manuscript_02.docx --reference-doc=custom-reference.docx -o manuscript.docx
+pandoc 01_title.md \
+manuscript_01.md \
+ manuscript_02.md \
+ --reference-doc=custom-reference.docx -o manuscript.docx
 
-rm manuscript_01.docx
-rm manuscript_02.docx
+rm manuscript_01.md
+rm manuscript_02.md
