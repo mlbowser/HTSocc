@@ -22,11 +22,11 @@ the Alaska Region Data Stewardship Team (2019).
 
 References
 
-Alaska Region Data Stewardship Team. 2019. Alaska Region Interim Data
-Management User Guide (v.3).
+Alaska Region Data Stewardship Team 2019. Alaska Region Interim Data
+Management User Guide (v.3). doi:10.7944/P9JF0RT6.
 
-Bowser ML, Brassfield R, Dziergowski A, Eskelin T, Hester J, Magness DR,
-McInnis M, Melvin T, Morton JM, Stone J. 2020. Towards conserving
-natural diversity: A biotic inventory by observations, specimens, DNA
-barcoding and high-throughput sequencing methods. Biodiversity Data
-Journal 8:e50124.
+Bowser, M.L., Brassfield, R., Dziergowski, A., Eskelin, T., Hester, J.,
+Magness, D.R., McInnis, M., Melvin, T., Morton, J.M., and Stone, J.
+2020. Towards conserving natural diversity: A biotic inventory by
+observations, specimens, DNA barcoding and high-throughput sequencing
+methods. Biodiversity Data Journal 8: e50124. doi:10.3897/BDJ.8.e50124.

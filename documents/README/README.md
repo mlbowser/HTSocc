@@ -10,7 +10,7 @@ language: en-US
 bibliography: ../manuscript/bibliography.bib
 toc-title: 'Contents'
 link-citations: true
-csl: ../manuscript/conservation-biology.csl
+csl: ../manuscript/canadian-journal-of-plant-science.csl
 ...
 
 # Documenting distributions of hyperdiverse groups (terrestrial invertebrates) through grid-based spatial sampling, high-throughput sequencing, and occupancy modeling
