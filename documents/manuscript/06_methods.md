@@ -1,5 +1,11 @@
 
-# Methods
+# Materials and Methods
+
+## Study area
+
+The study area, described by Bowser et al. [-@Bowser_et_al_2020], was a portion of the Slikok Creek watershed on the Kenai National Wildlife Refuge (KNWR). The resulting 938 ha study area occupied a bounding box from 60.44° to 60.47° latitude and from -151.10° to -151.03° longitude.
+
+Based on data from the National Land Cover Database [@Homer_et_al_2015], the land area of this study area was coverd mostly by mixed forest (29%), evergreen forest (22%), emergent herbaceous wetlands (13%), deciduous forest (12%), woody wetlands (11%), and open water (10%). Common trees in well-drained areas were white spruce (*Picea glauca* (Moench) Voss), Alaska birch (*Betula pendula* subsp. *mandshurica* (Regel) Ashburner & McAll.), quaking aspen (*Populus tremuloides* Michx.), and cottonwood (*Populus* × *hastata* Dode). Black spruce (*Picea mariana* Britton, Sterns & Poggenb.) was the dominant tree in forested wetlands. Herbaceous wetlands were characterized by mosses, sedges, and low shrubs. Shallow, eutrophic lakes (Headquarters Lake, Nordic Lake, and smaller, unnamed lakes) accounted for most of the open water in the study area.
 
 Sampling design, field methods, and identification methods were detailed by @Bowser_et_al_2020, but they are summarized here.
 
@@ -29,7 +35,7 @@ Invertebrate sequences that could not be confidently assigned to described speci
 
 We sought to follow the guidelines of @Penev_et_al_2017 for publication of biodiversity data. Species occurrence data have been made available via Arctos (<https://arctosdb.org/>), where they are associated together via an Arctos project (<http://arctos.database.museum/project/10002227>). These occurrence data on Arctos are also provided to the Global Biodiversity Information Facility (<https://www.gbif.org/>).
 
-## Data processing
+## Data analysis
 
 In the time since @Bowser_et_al_2020 was published, a handfull of identifications of the records on Arctos have been improved based on new data that became available in the reference databases [@Ratnasingham_Hebert_2007; @Clark_et_al_2016].
 
