@@ -15,7 +15,7 @@ This output was written by the R script [../../code/01_reshape_data.R](../../cod
 
 write("## Sampling summaries
 
-To be clear, all 160 samples (40 terrestrial plots × 2 subplots per plot × 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
+To be clear, 160 samples (40 terrestrial plots × 2 subplots per plot × 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
 ", out_file, append=TRUE)
 
 ## Separate plot and subplot identifiers.

@@ -4,7 +4,7 @@ This output was written by the R script [../../code/01_reshape_data.R](../../cod
 
 ## Sampling summaries
 
-To be clear, all 160 samples (40 terrestrial plots × 2 subplots per plot × 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
+To be clear, 160 samples (40 terrestrial plots Ã— 2 subplots per plot Ã— 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
 
 
 Number of plots: \
@@ -77,7 +77,7 @@ Number of observation records: \
 Number of unique identifications: \
 975
 
-Number of unique species × event records: \
+Number of unique species X event records: \
 2375
 
 Number of formally described species: \
