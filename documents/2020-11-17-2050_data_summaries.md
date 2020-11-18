@@ -27,6 +27,6 @@ Number of records by Julian day
 |        222|            226|
 |        223|             93|
 
-![Numbers of observation records by Julian day.](images/2020-11-17-2050_observations_vs_julian_day.png)\ 
+![Numbers of observation records by Julian day.](images/2020-11-17-2050_observations_vs_julian_day.png)\
 Numbers of observation records by Julian day.
 
