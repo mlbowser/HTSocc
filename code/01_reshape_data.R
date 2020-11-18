@@ -9,7 +9,7 @@ out_file <- "../documents/summaries/data_summaries.md"
 
 write("# Data summaries
 
-This output was written by the R script at <../../code/01_reshape_data.R>.
+This output was written by the R script [../../code/01_reshape_data.R>](../../code/01_reshape_data.R).
 ", out_file)
 
 ## How many records were there?

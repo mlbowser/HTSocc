@@ -1,6 +1,6 @@
 # Data summaries
 
-This output was written by the R script at <../../code/01_reshape_data.R>.
+This output was written by the R script [../../code/01_reshape_data.R>](../../code/01_reshape_data.R).
 
 
 Number of records: \
