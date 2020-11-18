@@ -58,7 +58,14 @@ Number of subplots surveyed per day.
 Number of subplots surveyed per day.
 
 
-Number of records: \
+Breakdown of plots by sampling regime.
+|sampling_regime                                                                        |n_plots |
+|:--------------------------------------------------------------------------------------|:-------|
+|East and west suplots sampled in time periods 1 and 2.                                 |22      |
+|East subplots sampled in time periods 1 and 2; west subplots not sampled.              |17      |
+|East subplots sampled in time periods 1 and 2; west subplots sampled in time period 1. |1       |
+
+Number of observation records: \
 2375
 
 Number of unique identifications: \

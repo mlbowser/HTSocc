@@ -2,6 +2,7 @@
 ## Reshape data
 
 library(knitr)
+library(reshape2)
 
 data01 <- read.csv("../data/raw_data/occurrence_data/2020-11-12-1400_occurrences.csv", stringsAsFactors=FALSE)
 
@@ -105,11 +106,33 @@ write(paste0("
 ", image_caption, "
 "), out_file, append=TRUE)
 
-## How many records were there?
-nrow(data01)
+## It would be good to make a table of the number of revisits at each plot.
+## I will divide the dates into two time periods.
+data01$time_period <- NA
+data01$time_period[data01$julian_day < 190] <- 1
+data01$time_period[data01$julian_day > 190] <- 2
+
+ag05 <- unique(data01[,c("plot_name", "plot_half", "time_period")])
+ag05 <- melt(ag05, id.vars=c("plot_name", "plot_half", "time_period"))
+ag05 <- dcast(ag05, plot_name ~ plot_half + time_period, fun.aggregate=length)
+
+all4 <- sum(ag05$east_1 & ag05$east_2 & ag05$west_1 & ag05$west_2)
+onlye <- sum(ag05$east_1 & ag05$east_2 & !ag05$west_1 & !ag05$west_2)
+wonce <- sum(ag05$east_1 & ag05$east_2 & ag05$west_1 & !ag05$west_2)
+
+n_plots <- c(all4, onlye, wonce)
+sampling_regime <- c("East and west suplots sampled in time periods 1 and 2.",
+ "East subplots sampled in time periods 1 and 2; west subplots not sampled.",
+ "East subplots sampled in time periods 1 and 2; west subplots sampled in time period 1."
+ )
+sampling_breakdown <- as.data.frame(cbind(sampling_regime, n_plots))
 
 write("
-Number of records: \\", out_file, append=TRUE)
+Breakdown of plots by sampling regime.", out_file, append=TRUE)
+write(kable(sampling_breakdown), out_file, append=TRUE)
+ 
+write("
+Number of observation records: \\", out_file, append=TRUE)
 write(nrow(data01), out_file, append=TRUE)
 
 ## How many unique identifications were there?
