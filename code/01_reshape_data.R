@@ -14,7 +14,7 @@ This output was written by the R script [../../code/01_reshape_data.R](../../cod
 ", out_file)
 
 write("## Sampling summaries
-", out_file)
+", out_file, append=TRUE)
 
 ## Separate plot and subplot identifiers.
 data01$plot_half <- NA
@@ -135,7 +135,7 @@ Breakdown of plots by sampling regime.", out_file, append=TRUE)
 write(kable(sampling_breakdown), out_file, append=TRUE)
 
 write("## Observation summaries
-", out_file)
+", out_file, append=TRUE)
  
 write("
 Number of observation records: \\", out_file, append=TRUE)
@@ -275,7 +275,7 @@ Summary of number of observations per sampling event.", out_file, append=TRUE)
 write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)
 
 write("## Cost
-", out_file)
+", out_file, append=TRUE)
 
 write("
 HTS sequencing cost per sample:\\
