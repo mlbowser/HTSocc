@@ -36,7 +36,7 @@ Number of plots surveyed per day.
 Number of subplots: \
 63
 
-Number of unique subplots X date sampling events: \
+Number of unique subplots × date sampling events: \
 125
 
 Number of subplots surveyed per day.
@@ -77,7 +77,7 @@ Number of observation records: \
 Number of unique identifications: \
 975
 
-Number of unique species X event records: \
+Number of unique species × event records: \
 2375
 
 Number of formally described species: \

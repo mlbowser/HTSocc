@@ -79,7 +79,7 @@ Number of subplots: \\", out_file, append=TRUE)
 write(length(levels(as.factor(data01$SPEC_LOCALITY))), out_file, append=TRUE)
 
 write("
-Number of unique subplots X date sampling events: \\", out_file, append=TRUE)
+Number of unique subplots × date sampling events: \\", out_file, append=TRUE)
 write(sum(ag03$n_subplots), out_file, append=TRUE)
 
 write("
@@ -150,12 +150,12 @@ write("
 Number of unique identifications: \\", out_file, append=TRUE)
 write(length(unique(data01$SCIENTIFIC_NAME)), out_file, append=TRUE)
 
-## Are all of the species X event records unique? (It is possible that some MOTUs ended up with the same identificaions.)
+## Are all of the species × event records unique? (It is possible that some MOTUs ended up with the same identificaions.)
 nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")]))
 ## Yes, it appears that they are all unique.
 
 write("
-Number of unique species X event records: \\", out_file, append=TRUE)
+Number of unique species × event records: \\", out_file, append=TRUE)
 write(nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")])), out_file, append=TRUE)
 
 ## How many of the identifications are formally described species?
