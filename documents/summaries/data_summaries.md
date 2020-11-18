@@ -3,50 +3,6 @@
 This output was written by the R script [../../code/01_reshape_data.R](../../code/01_reshape_data.R).
 
 
-Number of records: \
-2375
-
-Number of unique identifications: \
-975
-
-Number of unique species X event records: \
-2375
-
-Number of formally described species: \
-409
-
-Number of identifications using BOLD Barcode Index Numbers (BINs): \
-267
-
-Number of identifications using molecular operational taxonomic unit (MOTU) labels from this study: \
-260
-
-Number of other provisional names: \
-39
-
-Number of records by Julian day.
-| julian_day| n_observations|
-|----------:|--------------:|
-|        166|            356|
-|        167|            290|
-|        168|            212|
-|        169|            225|
-|        200|             77|
-|        201|            153|
-|        202|            129|
-|        203|             96|
-|        204|            164|
-|        208|             27|
-|        211|             93|
-|        214|             67|
-|        216|            167|
-|        222|            226|
-|        223|             93|
-
-![Numbers of observation records by Julian day.](../images/observations_vs_julian_day.png)\
-Numbers of observation records by Julian day.
-
-
 Number of plots: \
 40
 
@@ -102,6 +58,50 @@ Number of subplots surveyed per day.
 Number of subplots surveyed per day.
 
 
+Number of records: \
+2375
+
+Number of unique identifications: \
+975
+
+Number of unique species X event records: \
+2375
+
+Number of formally described species: \
+409
+
+Number of identifications using BOLD Barcode Index Numbers (BINs): \
+267
+
+Number of identifications using molecular operational taxonomic unit (MOTU) labels from this study: \
+260
+
+Number of other provisional names: \
+39
+
+Number of records by Julian day.
+| julian_day| n_observations|
+|----------:|--------------:|
+|        166|            356|
+|        167|            290|
+|        168|            212|
+|        169|            225|
+|        200|             77|
+|        201|            153|
+|        202|            129|
+|        203|             96|
+|        204|            164|
+|        208|             27|
+|        211|             93|
+|        214|             67|
+|        216|            167|
+|        222|            226|
+|        223|             93|
+
+![Numbers of observation records by Julian day.](../images/observations_vs_julian_day.png)\
+Numbers of observation records by Julian day.
+
+
 Mean number of observations per subplot: \
 19
 
@@ -124,8 +124,8 @@ Number of subplots surveyed per day and mean number of observations per subplot.
 |        222|         11|                    20.55|
 |        223|          3|                    31.00|
 
-![Number of observations per unit effort over time.](../images/observations_per_subplot_vs_julian_day.png)\
-Number of observations per unit effort over time.
+![Number of observations per unit effort over time. Numbers above bars indicate numbers of subplots sampled each day.](../images/observations_per_subplot_vs_julian_day.png)\
+Number of observations per unit effort over time. Numbers above bars indicate numbers of subplots sampled each day.
 
 
 Summary of number of observations per sampling event.

@@ -12,104 +12,7 @@ write("# Data summaries
 This output was written by the R script [../../code/01_reshape_data.R](../../code/01_reshape_data.R).
 ", out_file)
 
-## How many records were there?
-nrow(data01)
-
-write("
-Number of records: \\", out_file, append=TRUE)
-write(nrow(data01), out_file, append=TRUE)
-
-## How many unique identifications were there?
-length(unique(data01$SCIENTIFIC_NAME))
-
-write("
-Number of unique identifications: \\", out_file, append=TRUE)
-write(length(unique(data01$SCIENTIFIC_NAME)), out_file, append=TRUE)
-
-## Are all of the species X event records unique? (It is possible that some MOTUs ended up with the same identificaions.)
-nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")]))
-## Yes, it appears that they are all unique.
-
-write("
-Number of unique species X event records: \\", out_file, append=TRUE)
-write(nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")])), out_file, append=TRUE)
-
-## How many of the identifications are formally described species?
-sum(!grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME)))
-
-write("
-Number of formally described species: \\", out_file, append=TRUE)
-write(sum(!grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
-
-## How many of these are BOLD BIN identifications?
-sum(grepl("BOLD:", unique(data01$SCIENTIFIC_NAME)))
-
-write("
-Number of identifications using BOLD Barcode Index Numbers (BINs): \\", out_file, append=TRUE)
-write(sum(grepl("BOLD:", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
-
-## How many of these are ASVs from this study?
-sum(grepl("SlikokO", unique(data01$SCIENTIFIC_NAME)))
-
-write("
-Number of identifications using molecular operational taxonomic unit (MOTU) labels from this study: \\", out_file, append=TRUE)
-write(sum(grepl("SlikokOtu", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
-
-## How many of these are other provisional names?
-sl_formal <- !grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME))
-sl_BIN <- grepl("BOLD:", unique(data01$SCIENTIFIC_NAME))
-sl_MOTU <- grepl("SlikokOtu", unique(data01$SCIENTIFIC_NAME))
-sl_other <- !sl_formal & !sl_BIN & !sl_MOTU
-
-write("
-Number of other provisional names: \\", out_file, append=TRUE)
-write(sum(sl_other), out_file, append=TRUE)
-
-## Accounting.
-sum(sl_formal) + sum(sl_BIN) + sum(sl_MOTU) + sum(sl_other)
-
-## I want to have a look at those other provisional names.
-unique(data01$SCIENTIFIC_NAME)[sl_other]
-
-## I think it will be most handy to use Julian dates.
-data01$BEGAN_DATE <- as.Date(data01$BEGAN_DATE)
-data01$julian_day <- as.numeric(format(data01$BEGAN_DATE, "%j"))
-
-## Summarize the number of records per day.
-ag01 <- aggregate(data01$GUID, by=list(data01$julian_day), length)
-names(ag01) <- c("julian_day", "n_observations")
-
-write("
-Number of records by Julian day.", out_file, append=TRUE)
-write(kable(ag01), out_file, append=TRUE)
-
-## Plot number of observations versus Julian day.
-image_file <- "../documents/images/observations_vs_julian_day.png"
-width <- 600
-png(filename=image_file,
- width=width,
- height=round(width/1.618),
- pointsize=12
- )
-plot(ag01$julian_day,
- ag01$n_observations,
- ylim=c(0, max(ag01$n_observations)),
- type="h",
- xlab="Julian day",
- ylab="Number of observations",
- lwd=5,
- lend=2
- )
-dev.off()
-
-image_caption <- "Numbers of observation records by Julian day."
-write(paste0("
-![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
-", image_caption, "
-"), out_file, append=TRUE)
-
-## It might make more sense to plot the number of observations per unit effort.
-
+## Separate plot and subplot identifiers.
 data01$plot_half <- NA
 data01$plot_half[grepl("east half of plot", data01$SPEC_LOCALITY)] <- "east"
 data01$plot_half[grepl("west half of plot", data01$SPEC_LOCALITY)] <- "west"
@@ -121,6 +24,10 @@ length(levels(as.factor(data01$plot_name)))
 write("
 Number of plots: \\", out_file, append=TRUE)
 write(length(levels(as.factor(data01$plot_name))), out_file, append=TRUE)
+
+## I think it will be most handy to use Julian dates.
+data01$BEGAN_DATE <- as.Date(data01$BEGAN_DATE)
+data01$julian_day <- as.numeric(format(data01$BEGAN_DATE, "%j"))
 
 ## Summarize the number of plots surveyed per day.
 plot_data <- unique(data01[,c("plot_name", "julian_day")])
@@ -198,6 +105,98 @@ write(paste0("
 ", image_caption, "
 "), out_file, append=TRUE)
 
+## How many records were there?
+nrow(data01)
+
+write("
+Number of records: \\", out_file, append=TRUE)
+write(nrow(data01), out_file, append=TRUE)
+
+## How many unique identifications were there?
+length(unique(data01$SCIENTIFIC_NAME))
+
+write("
+Number of unique identifications: \\", out_file, append=TRUE)
+write(length(unique(data01$SCIENTIFIC_NAME)), out_file, append=TRUE)
+
+## Are all of the species X event records unique? (It is possible that some MOTUs ended up with the same identificaions.)
+nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")]))
+## Yes, it appears that they are all unique.
+
+write("
+Number of unique species X event records: \\", out_file, append=TRUE)
+write(nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")])), out_file, append=TRUE)
+
+## How many of the identifications are formally described species?
+sum(!grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME)))
+
+write("
+Number of formally described species: \\", out_file, append=TRUE)
+write(sum(!grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
+
+## How many of these are BOLD BIN identifications?
+sum(grepl("BOLD:", unique(data01$SCIENTIFIC_NAME)))
+
+write("
+Number of identifications using BOLD Barcode Index Numbers (BINs): \\", out_file, append=TRUE)
+write(sum(grepl("BOLD:", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
+
+## How many of these are ASVs from this study?
+sum(grepl("SlikokO", unique(data01$SCIENTIFIC_NAME)))
+
+write("
+Number of identifications using molecular operational taxonomic unit (MOTU) labels from this study: \\", out_file, append=TRUE)
+write(sum(grepl("SlikokOtu", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
+
+## How many of these are other provisional names?
+sl_formal <- !grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME))
+sl_BIN <- grepl("BOLD:", unique(data01$SCIENTIFIC_NAME))
+sl_MOTU <- grepl("SlikokOtu", unique(data01$SCIENTIFIC_NAME))
+sl_other <- !sl_formal & !sl_BIN & !sl_MOTU
+
+write("
+Number of other provisional names: \\", out_file, append=TRUE)
+write(sum(sl_other), out_file, append=TRUE)
+
+## Accounting.
+sum(sl_formal) + sum(sl_BIN) + sum(sl_MOTU) + sum(sl_other)
+
+## I want to have a look at those other provisional names.
+unique(data01$SCIENTIFIC_NAME)[sl_other]
+
+## Summarize the number of records per day.
+ag01 <- aggregate(data01$GUID, by=list(data01$julian_day), length)
+names(ag01) <- c("julian_day", "n_observations")
+
+write("
+Number of records by Julian day.", out_file, append=TRUE)
+write(kable(ag01), out_file, append=TRUE)
+
+## Plot number of observations versus Julian day.
+image_file <- "../documents/images/observations_vs_julian_day.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width/1.618),
+ pointsize=12
+ )
+plot(ag01$julian_day,
+ ag01$n_observations,
+ ylim=c(0, max(ag01$n_observations)),
+ type="h",
+ xlab="Julian day",
+ ylab="Number of observations",
+ lwd=5,
+ lend=2
+ )
+dev.off()
+
+image_caption <- "Numbers of observation records by Julian day."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
+
 ## Now I want to look at numbers of observations per unit effort.
 ag03$observations_per_supblot <- ag01$n_observations/ag03$n_subplots
 
@@ -234,7 +233,7 @@ text(ag03$julian_day,
  )
 dev.off()
 
-image_caption <- "Number of observations per unit effort over time."
+image_caption <- "Number of observations per unit effort over time. Numbers above bars indicate numbers of subplots sampled each day."
 write(paste0("
 ![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
 ", image_caption, "
