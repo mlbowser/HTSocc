@@ -40,3 +40,5 @@ In the time since @Bowser_et_al_2020 was published, a handfull of identification
 A summary of identfications from all HTS occurrences from sweep net samples obtained by @Bowser_et_al_2020 were downloaded from Arctos on 12 November 2020 (saved search URI: <https://arctos.database.museum/saved/2020-11-12-1157_Slikok_metabarcoding_taxa_list>), yielding a list of 975 unique identifications. For unidentified MOTUs where 10 or more occurrences were observed, we attempted to improve identifications by submitting the sequences to BOLD's ID Engine [@Ratnasingham_Hebert_2007] and BLAST [@Altschul_et_al_1990] searches. We obtained no new identifications.
 
 The 2,375 occurrences were downloaded on 12 November 2020 (saved search URI: <https://arctos.database.museum/saved/2020-11-12-1400_Slikok_project_metabarcoding_occurrences>).
+
+Data processing was carried out using R version 4.0.2 [@R_Core_Team_2020] and the packages knitr [@Xie2014; @Xie2015; @Xie2020] and reshape2 [@Wickham_2007].

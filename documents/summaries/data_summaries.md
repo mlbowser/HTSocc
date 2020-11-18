@@ -77,7 +77,7 @@ Number of observation records: \
 Number of unique identifications: \
 975
 
-Number of unique species X event records: \
+Number of unique species × event records: \
 2375
 
 Number of formally described species: \
