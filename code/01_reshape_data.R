@@ -43,7 +43,7 @@ ag01 <- aggregate(data01$GUID, by=list(data01$julian_day), length)
 names(ag01) <- c("julian_day", "n_observations")
 
 write("
-Number of records by Julian day", out_file, append=TRUE)
+Number of records by Julian day.", out_file, append=TRUE)
 write(kable(ag01), out_file, append=TRUE)
 
 ## Plot number of observations versus Julian day.
@@ -91,7 +91,7 @@ ag02 <- aggregate(plot_data$plot_name, by=list(plot_data$julian_day), length)
 names(ag02) <- c("julian_day", "n_plots")
 
 write("
-Number of plots surveyed per day", out_file, append=TRUE)
+Number of plots surveyed per day.", out_file, append=TRUE)
 write(kable(ag02), out_file, append=TRUE)
 
 ## Plot number of plots surveyed versus Julian day.
@@ -133,7 +133,7 @@ Number of unique subplots X date sampling events: \\", out_file, append=TRUE)
 write(sum(ag03$n_subplots), out_file, append=TRUE)
 
 write("
-Number of subplots surveyed per day", out_file, append=TRUE)
+Number of subplots surveyed per day.", out_file, append=TRUE)
 write(kable(ag03), out_file, append=TRUE)
 
 ## Plot number of subplots surveyed versus Julian day.
@@ -169,7 +169,7 @@ Mean number of observations per subplot: \\", out_file, append=TRUE)
 write(round(nrow(data01)/sum(ag03$n_subplots), 2), out_file, append=TRUE)
 
 write("
-Number of subplots surveyed per day and mean number of observations per subplot", out_file, append=TRUE)
+Number of subplots surveyed per day and mean number of observations per subplot.", out_file, append=TRUE)
 write(kable(ag03, digits=2), out_file, append=TRUE)
 
 ## Plot number of observations per unit effort over time.
@@ -206,5 +206,5 @@ write(paste0("
 ## What is the range full range of number of observations per subplot sampling event?
 ag04 <- aggregate(data01$GUID, by=list(data01$SPEC_LOCALITY, data01$julian_day), length)
 write("
-Summary of number of observations per sampling event: \\", out_file, append=TRUE)
+Summary of number of observations per sampling event.", out_file, append=TRUE)
 write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)

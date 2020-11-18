@@ -12,7 +12,7 @@ Number of unique identifications: \
 Number of unique species X event records: \
 975
 
-Number of records by Julian day
+Number of records by Julian day.
 | julian_day| n_observations|
 |----------:|--------------:|
 |        166|            356|
@@ -38,7 +38,7 @@ Numbers of observation records by Julian day.
 Number of plots: \
 40
 
-Number of plots surveyed per day
+Number of plots surveyed per day.
 | julian_day| n_plots|
 |----------:|-------:|
 |        166|      12|
@@ -67,7 +67,7 @@ Number of subplots: \
 Number of unique subplots X date sampling events: \
 125
 
-Number of subplots surveyed per day
+Number of subplots surveyed per day.
 | julian_day| n_subplots|
 |----------:|----------:|
 |        166|         18|
@@ -93,7 +93,7 @@ Number of subplots surveyed per day.
 Mean number of observations per subplot: \
 19
 
-Number of subplots surveyed per day and mean number of observations per subplot
+Number of subplots surveyed per day and mean number of observations per subplot.
 | julian_day| n_subplots| observations_per_supblot|
 |----------:|----------:|------------------------:|
 |        166|         18|                    19.78|
@@ -116,7 +116,7 @@ Number of subplots surveyed per day and mean number of observations per subplot
 Number of observations per unit effort over time.
 
 
-Summary of number of observations per sampling event: \
+Summary of number of observations per sampling event.
 |        | value|
 |:-------|-----:|
 |Min.    |     2|
