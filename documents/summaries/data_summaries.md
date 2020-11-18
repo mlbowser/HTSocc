@@ -1,14 +1,14 @@
 
-Number of records: \ 
+Number of records: \
 2375
 
-Number of unique identifications: \ 
+Number of unique identifications: \
 975
 
-Number of unique species X event records: \ 
+Number of unique species X event records: \
 975
 
-Number of records by Julian day
+Number of records by Julian day\
 | julian_day| n_observations|
 |----------:|--------------:|
 |        166|            356|
@@ -27,6 +27,6 @@ Number of records by Julian day
 |        222|            226|
 |        223|             93|
 
-![Numbers of observation records by Julian day.](images/2020-11-17-2050_observations_vs_julian_day.png)\
+![Numbers of observation records by Julian day.](../images/observations_vs_julian_day.png)\
 Numbers of observation records by Julian day.
 
