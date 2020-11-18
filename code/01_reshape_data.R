@@ -9,7 +9,7 @@ out_file <- "../documents/summaries/data_summaries.md"
 
 write("# Data summaries
 
-This output was written by the R script [../../code/01_reshape_data.R>](../../code/01_reshape_data.R).
+This output was written by the R script [../../code/01_reshape_data.R](../../code/01_reshape_data.R).
 ", out_file)
 
 ## How many records were there?
@@ -56,6 +56,7 @@ png(filename=image_file,
  )
 plot(ag01$julian_day,
  ag01$n_observations,
+ ylim=c(0, max(ag01$n_observations)),
  type="h",
  xlab="Julian day",
  ylab="Number of observations",
@@ -103,6 +104,7 @@ png(filename=image_file,
  )
 plot(ag02$julian_day,
  ag02$n_plots,
+ ylim=c(0, max(ag02$n_plots)),
  type="h",
  xlab="Julian day",
  ylab="Number of plots surveyed",
@@ -123,6 +125,14 @@ ag03 <- aggregate(supblot_data$SPEC_LOCALITY, by=list(supblot_data$julian_day), 
 names(ag03) <- c("julian_day", "n_subplots")
 
 write("
+Number of subplots: \\", out_file, append=TRUE)
+write(length(levels(as.factor(data01$SPEC_LOCALITY))), out_file, append=TRUE)
+
+write("
+Number of unique subplots X date sampling events: \\", out_file, append=TRUE)
+write(sum(ag03$n_subplots), out_file, append=TRUE)
+
+write("
 Number of subplots surveyed per day", out_file, append=TRUE)
 write(kable(ag03), out_file, append=TRUE)
 
@@ -136,6 +146,7 @@ png(filename=image_file,
  )
 plot(ag03$julian_day,
  ag03$n_subplots,
+ ylim=c(0, max(ag03$n_subplots)),
  type="h",
  xlab="Julian day",
  ylab="Number of subplots surveyed",
@@ -150,3 +161,50 @@ write(paste0("
 ", image_caption, "
 "), out_file, append=TRUE)
 
+## Now I want to look at numbers of observations per unit effort.
+ag03$observations_per_supblot <- ag01$n_observations/ag03$n_subplots
+
+write("
+Mean number of observations per subplot: \\", out_file, append=TRUE)
+write(round(nrow(data01)/sum(ag03$n_subplots), 2), out_file, append=TRUE)
+
+write("
+Number of subplots surveyed per day and mean number of observations per subplot", out_file, append=TRUE)
+write(kable(ag03, digits=2), out_file, append=TRUE)
+
+## Plot number of observations per unit effort over time.
+image_file <- "../documents/images/observations_per_subplot_vs_julian_day.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width/1.618),
+ pointsize=12
+ )
+plot(ag03$julian_day,
+ ag03$observations_per_supblot,
+ ylim=c(0, max(ag03$observations_per_supblot)*1.1),
+ type="h",
+ xlab="Julian day",
+ ylab="Number of observations per subplot surveyed",
+ lwd=5,
+ lend=2
+ )
+text(ag03$julian_day,
+ ag03$observations_per_supblot,
+ labels=ag03$n_subplots,
+ pos=3,
+ cex=0.7
+ )
+dev.off()
+
+image_caption <- "Number of observations per unit effort over time."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
+
+## What is the range full range of number of observations per subplot sampling event?
+ag04 <- aggregate(data01$GUID, by=list(data01$SPEC_LOCALITY, data01$julian_day), length)
+write("
+Summary of number of observations per sampling event: \\", out_file, append=TRUE)
+write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)
