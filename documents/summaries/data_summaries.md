@@ -1,3 +1,7 @@
+# Data summaries
+
+This output was written by the R script at <../../code/01_reshape_data.R>.
+
 
 Number of records: \
 2375
@@ -30,3 +34,6 @@ Number of records by Julian day
 ![Numbers of observation records by Julian day.](../images/observations_vs_julian_day.png)\
 Numbers of observation records by Julian day.
 
+
+Number of plots: \
+40

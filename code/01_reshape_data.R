@@ -7,11 +7,16 @@ data01 <- read.csv("../data/raw_data/occurrence_data/2020-11-12-1400_occurrences
 
 out_file <- "../documents/summaries/data_summaries.md"
 
-## How many records were there?d
+write("# Data summaries
+
+This output was written by the R script at <../../code/01_reshape_data.R>.
+", out_file)
+
+## How many records were there?
 nrow(data01)
 
 write("
-Number of records: \\", out_file)
+Number of records: \\", out_file, append=TRUE)
 write(nrow(data01), out_file, append=TRUE)
 
 ## How many unique identifications were there?
@@ -58,12 +63,25 @@ plot(ag01$julian_day,
  lend=2
  )
 dev.off()
-## It might make more sense to plot the number of observations per unit effort.
 
 image_caption <- "Numbers of observation records by Julian day."
 write(paste0("
 ![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
 ", image_caption, "
 "), out_file, append=TRUE)
+
+## It might make more sense to plot the number of observations per unit effort.
+
+data01$plot_half <- NA
+data01$plot_half[grepl("east half of plot", data01$SPEC_LOCALITY)] <- "east"
+data01$plot_half[grepl("west half of plot", data01$SPEC_LOCALITY)] <- "west"
+
+data01$plot_name <- gsub(", east half of plot", "", data01$SPEC_LOCALITY)
+data01$plot_name <- gsub(", west half of plot", "", data01$plot_name)
+length(levels(as.factor(data01$plot_name)))
+
+write("
+Number of plots: \\", out_file, append=TRUE)
+write(length(levels(as.factor(data01$plot_name))), out_file, append=TRUE)
 
 
