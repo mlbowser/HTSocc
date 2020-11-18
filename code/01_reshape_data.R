@@ -84,4 +84,69 @@ write("
 Number of plots: \\", out_file, append=TRUE)
 write(length(levels(as.factor(data01$plot_name))), out_file, append=TRUE)
 
+## Summarize the number of plots surveyed per day.
+plot_data <- unique(data01[,c("plot_name", "julian_day")])
+ag02 <- aggregate(plot_data$plot_name, by=list(plot_data$julian_day), length)
+names(ag02) <- c("julian_day", "n_plots")
+
+write("
+Number of plots surveyed per day", out_file, append=TRUE)
+write(kable(ag02), out_file, append=TRUE)
+
+## Plot number of plots surveyed versus Julian day.
+image_file <- "../documents/images/plots_vs_julian_day.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width/1.618),
+ pointsize=12
+ )
+plot(ag02$julian_day,
+ ag02$n_plots,
+ type="h",
+ xlab="Julian day",
+ ylab="Number of plots surveyed",
+ lwd=5,
+ lend=2
+ )
+dev.off()
+
+image_caption <- "Number of plots surveyed per day."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
+
+## I really should summarize the number of plot halves surveyed per day.
+supblot_data <- unique(data01[,c("SPEC_LOCALITY", "julian_day")])
+ag03 <- aggregate(supblot_data$SPEC_LOCALITY, by=list(supblot_data$julian_day), length)
+names(ag03) <- c("julian_day", "n_subplots")
+
+write("
+Number of subplots surveyed per day", out_file, append=TRUE)
+write(kable(ag03), out_file, append=TRUE)
+
+## Plot number of subplots surveyed versus Julian day.
+image_file <- "../documents/images/subplots_vs_julian_day.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width/1.618),
+ pointsize=12
+ )
+plot(ag03$julian_day,
+ ag03$n_subplots,
+ type="h",
+ xlab="Julian day",
+ ylab="Number of subplots surveyed",
+ lwd=5,
+ lend=2
+ )
+dev.off()
+
+image_caption <- "Number of subplots surveyed per day."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
 

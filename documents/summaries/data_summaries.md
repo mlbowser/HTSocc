@@ -37,3 +37,49 @@ Numbers of observation records by Julian day.
 
 Number of plots: \
 40
+
+Number of plots surveyed per day
+| julian_day| n_plots|
+|----------:|-------:|
+|        166|      12|
+|        167|      11|
+|        168|       9|
+|        169|       8|
+|        200|       2|
+|        201|       4|
+|        202|       4|
+|        203|       4|
+|        204|       3|
+|        208|       1|
+|        211|       4|
+|        214|       3|
+|        216|       6|
+|        222|       7|
+|        223|       2|
+
+![Number of plots surveyed per day.](../images/plots_vs_julian_day.png)\
+Number of plots surveyed per day.
+
+
+Number of subplots surveyed per day
+| julian_day| n_subplots|
+|----------:|----------:|
+|        166|         18|
+|        167|         17|
+|        168|         14|
+|        169|         14|
+|        200|          3|
+|        201|          6|
+|        202|          6|
+|        203|          7|
+|        204|          5|
+|        208|          2|
+|        211|          6|
+|        214|          4|
+|        216|          9|
+|        222|         11|
+|        223|          3|
+
+![Number of subplots surveyed per day.](../images/subplots_vs_julian_day.png)\
+Number of subplots surveyed per day.
+
