@@ -10,7 +10,19 @@ Number of unique identifications: \
 975
 
 Number of unique species X event records: \
-975
+2375
+
+Number of formally described species: \
+409
+
+Number of identifications using BOLD Barcode Index Numbers (BINs): \
+267
+
+Number of identifications using molecular operational taxonomic unit (MOTU) labels from this study: \
+260
+
+Number of other provisional names: \
+39
 
 Number of records by Julian day.
 | julian_day| n_observations|
@@ -125,3 +137,9 @@ Summary of number of observations per sampling event.
 |Mean    |    19|
 |3rd Qu. |    25|
 |Max.    |    46|
+
+HTS sequencing cost per sample:
+$85
+
+HTS sequencing cost per observation record:
+$4.47

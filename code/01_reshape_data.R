@@ -32,7 +32,44 @@ nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")]))
 
 write("
 Number of unique species X event records: \\", out_file, append=TRUE)
-write(length(unique(data01$SCIENTIFIC_NAME)), out_file, append=TRUE)
+write(nrow(unique(data01[,c("SCIENTIFIC_NAME", "SPEC_LOCALITY", "BEGAN_DATE")])), out_file, append=TRUE)
+
+## How many of the identifications are formally described species?
+sum(!grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME)))
+
+write("
+Number of formally described species: \\", out_file, append=TRUE)
+write(sum(!grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
+
+## How many of these are BOLD BIN identifications?
+sum(grepl("BOLD:", unique(data01$SCIENTIFIC_NAME)))
+
+write("
+Number of identifications using BOLD Barcode Index Numbers (BINs): \\", out_file, append=TRUE)
+write(sum(grepl("BOLD:", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
+
+## How many of these are ASVs from this study?
+sum(grepl("SlikokO", unique(data01$SCIENTIFIC_NAME)))
+
+write("
+Number of identifications using molecular operational taxonomic unit (MOTU) labels from this study: \\", out_file, append=TRUE)
+write(sum(grepl("SlikokOtu", unique(data01$SCIENTIFIC_NAME))), out_file, append=TRUE)
+
+## How many of these are other provisional names?
+sl_formal <- !grepl(" sp\\. ", unique(data01$SCIENTIFIC_NAME))
+sl_BIN <- grepl("BOLD:", unique(data01$SCIENTIFIC_NAME))
+sl_MOTU <- grepl("SlikokOtu", unique(data01$SCIENTIFIC_NAME))
+sl_other <- !sl_formal & !sl_BIN & !sl_MOTU
+
+write("
+Number of other provisional names: \\", out_file, append=TRUE)
+write(sum(sl_other), out_file, append=TRUE)
+
+## Accounting.
+sum(sl_formal) + sum(sl_BIN) + sum(sl_MOTU) + sum(sl_other)
+
+## I want to have a look at those other provisional names.
+unique(data01$SCIENTIFIC_NAME)[sl_other]
 
 ## I think it will be most handy to use Julian dates.
 data01$BEGAN_DATE <- as.Date(data01$BEGAN_DATE)
@@ -208,3 +245,11 @@ ag04 <- aggregate(data01$GUID, by=list(data01$SPEC_LOCALITY, data01$julian_day),
 write("
 Summary of number of observations per sampling event.", out_file, append=TRUE)
 write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)
+
+write("
+HTS sequencing cost per sample:
+$85", out_file, append=TRUE)
+
+write("
+HTS sequencing cost per observation record:", out_file, append=TRUE)
+write(paste0("$", round(85/(nrow(data01)/sum(ag03$n_subplots)), 2)), out_file, append=TRUE)
