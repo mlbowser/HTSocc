@@ -13,6 +13,9 @@ write("# Data summaries
 This output was written by the R script [../../code/01_reshape_data.R](../../code/01_reshape_data.R).
 ", out_file)
 
+write("## Sampling summaries
+", out_file)
+
 ## Separate plot and subplot identifiers.
 data01$plot_half <- NA
 data01$plot_half[grepl("east half of plot", data01$SPEC_LOCALITY)] <- "east"
@@ -123,13 +126,16 @@ wonce <- sum(ag05$east_1 & ag05$east_2 & ag05$west_1 & !ag05$west_2)
 n_plots <- c(all4, onlye, wonce)
 sampling_regime <- c("East and west suplots sampled in time periods 1 and 2.",
  "East subplots sampled in time periods 1 and 2; west subplots not sampled.",
- "East subplots sampled in time periods 1 and 2; west subplots sampled in time period 1."
+ "East subplots sampled in time periods 1 and 2; west subplots sampled only in time period 1."
  )
 sampling_breakdown <- as.data.frame(cbind(sampling_regime, n_plots))
 
 write("
 Breakdown of plots by sampling regime.", out_file, append=TRUE)
 write(kable(sampling_breakdown), out_file, append=TRUE)
+
+write("## Observation summaries
+", out_file)
  
 write("
 Number of observation records: \\", out_file, append=TRUE)
@@ -267,6 +273,9 @@ ag04 <- aggregate(data01$GUID, by=list(data01$SPEC_LOCALITY, data01$julian_day),
 write("
 Summary of number of observations per sampling event.", out_file, append=TRUE)
 write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)
+
+write("## Cost
+", out_file)
 
 write("
 HTS sequencing cost per sample:\\
