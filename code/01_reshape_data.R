@@ -269,9 +269,9 @@ Summary of number of observations per sampling event.", out_file, append=TRUE)
 write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)
 
 write("
-HTS sequencing cost per sample:
+HTS sequencing cost per sample:\\
 $85", out_file, append=TRUE)
 
 write("
-HTS sequencing cost per observation record:", out_file, append=TRUE)
+HTS sequencing cost per observation record:\\", out_file, append=TRUE)
 write(paste0("$", round(85/(nrow(data01)/sum(ag03$n_subplots)), 2)), out_file, append=TRUE)

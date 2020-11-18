@@ -145,8 +145,8 @@ Summary of number of observations per sampling event.
 |3rd Qu. |    25|
 |Max.    |    46|
 
-HTS sequencing cost per sample:
+HTS sequencing cost per sample:\
 $85
 
-HTS sequencing cost per observation record:
+HTS sequencing cost per observation record:\
 $4.47
