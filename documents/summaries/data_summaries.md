@@ -4,6 +4,8 @@ This output was written by the R script [../../code/01_reshape_data.R](../../cod
 
 ## Sampling summaries
 
+To be clear, all 160 samples (40 terrestrial plots × 2 subplots per plot × 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
+
 
 Number of plots: \
 40
@@ -148,6 +150,23 @@ Summary of number of observations per sampling event.
 |Mean    |    19|
 |3rd Qu. |    25|
 |Max.    |    46|
+
+Summary of overall frequency of occurrence for all species.
+|        | value|
+|:-------|-----:|
+|Min.    | 0.008|
+|1st Qu. | 0.008|
+|Median  | 0.008|
+|Mean    | 0.019|
+|3rd Qu. | 0.016|
+|Max.    | 0.288|
+
+Number of species represented by a single occurrence:\
+615
+
+![Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected divided by the total number of samples.](../images/histogram_overall_frequencies.png)\
+Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected divided by the total number of samples.
+
 ## Cost
 
 

@@ -14,6 +14,8 @@ This output was written by the R script [../../code/01_reshape_data.R](../../cod
 ", out_file)
 
 write("## Sampling summaries
+
+To be clear, all 160 samples (40 terrestrial plots × 2 subplots per plot × 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
 ", out_file, append=TRUE)
 
 ## Separate plot and subplot identifiers.
@@ -273,6 +275,43 @@ ag04 <- aggregate(data01$GUID, by=list(data01$SPEC_LOCALITY, data01$julian_day),
 write("
 Summary of number of observations per sampling event.", out_file, append=TRUE)
 write(kable(as.data.frame(as.matrix(summary(ag04$x))), col.names=c("value")), out_file, append=TRUE)
+
+## Now summarizing frequncy of occurrence.
+data01$presence <- 1
+data02 <- melt(data01, measure.vars="presence")
+freq01 <- dcast(data02, SCIENTIFIC_NAME ~ value, sum)
+names(freq01) <- c("species", "frequency")
+n_events <- sum(ag03$n_subplots)
+freq01$frequency <- freq01$frequency/n_events
+
+write("
+Summary of overall frequency of occurrence for all species.", out_file, append=TRUE)
+write(kable(as.data.frame(as.matrix(summary(freq01$frequency))), col.names=c("value"), digits=3), out_file, append=TRUE)
+
+## Wow, how many species are represented by a single occurrence?
+write("
+Number of species represented by a single occurrence:\\", out_file, append=TRUE)
+write(sum(freq01$frequency == 1/n_events), out_file, append=TRUE)
+
+## Histogram of overall frequencies.
+image_file <- "../documents/images/histogram_overall_frequencies.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width/1.618),
+ pointsize=12
+ )
+plot(hist(freq01$frequency),
+ main="Histogram of overall frequency of occurrence for all species",
+ xlab="Frequency of occurrence"
+ )
+dev.off()
+
+image_caption <- "Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected divided by the total number of samples."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
 
 write("## Cost
 ", out_file, append=TRUE)
