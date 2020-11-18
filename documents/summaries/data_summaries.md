@@ -8,7 +8,7 @@ Number of unique identifications: \
 Number of unique species X event records: \
 975
 
-Number of records by Julian day\
+Number of records by Julian day
 | julian_day| n_observations|
 |----------:|--------------:|
 |        166|            356|

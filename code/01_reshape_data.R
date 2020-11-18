@@ -38,7 +38,7 @@ ag01 <- aggregate(data01$GUID, by=list(data01$julian_day), length)
 names(ag01) <- c("julian_day", "n_observations")
 
 write("
-Number of records by Julian day\\", out_file, append=TRUE)
+Number of records by Julian day", out_file, append=TRUE)
 write(kable(ag01), out_file, append=TRUE)
 
 ## Plot number of observations versus Julian day.
