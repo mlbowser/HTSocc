@@ -4,7 +4,7 @@ This output was written by the R script [../../code/01_reshape_data.R](../../cod
 
 ## Sampling summaries
 
-To be clear, 160 samples (40 terrestrial plots Ã— 2 subplots per plot Ã— 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
+To be clear, 160 samples (40 terrestrial plots × 2 subplots per plot × 2 time periods) were collected in the field, but only 125 samples were submitted for High-Throughput Sequencing. All summaries below are based on data obtained from these 125 samples. 
 
 
 Number of plots: \
@@ -36,7 +36,7 @@ Number of plots surveyed per day.
 Number of subplots: \
 63
 
-Number of unique subplots Ã— date sampling events: \
+Number of unique subplots × date sampling events: \
 125
 
 Number of subplots surveyed per day.
@@ -77,7 +77,7 @@ Number of observation records: \
 Number of unique identifications: \
 975
 
-Number of unique species Ã— event records: \
+Number of unique species × event records: \
 2375
 
 Number of formally described species: \
@@ -166,6 +166,23 @@ Number of species represented by a single occurrence:\
 
 ![Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected divided by the total number of samples.](../images/histogram_overall_frequencies.png)\
 Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected divided by the total number of samples.
+
+
+Summary of overall frequency of occurrence in terms of presence or absence at plots.
+|        | value|
+|:-------|-----:|
+|Min.    | 0.025|
+|1st Qu. | 0.025|
+|Median  | 0.025|
+|Mean    | 0.053|
+|3rd Qu. | 0.050|
+|Max.    | 0.675|
+
+Number of species detected at only one plot:\
+649
+
+![Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected divided by the total number of plots.](../images/histogram_frequencies_by_plot.png)\
+Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected divided by the total number of plots.
 
 ## Cost
 

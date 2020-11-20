@@ -1,8 +1,12 @@
 
-## Reshape data
+## Script to Reshape data.
 
+## Load libraries.
 library(knitr)
 library(reshape2)
+
+## Load functions.
+source("functions/functions.R")
 
 data01 <- read.csv("../data/raw_data/occurrence_data/2020-11-12-1400_occurrences.csv", stringsAsFactors=FALSE)
 
@@ -25,6 +29,7 @@ data01$plot_half[grepl("west half of plot", data01$SPEC_LOCALITY)] <- "west"
 
 data01$plot_name <- gsub(", east half of plot", "", data01$SPEC_LOCALITY)
 data01$plot_name <- gsub(", west half of plot", "", data01$plot_name)
+data01$plot_name <- substr(data01$plot_name, nchar(data01$plot_name)-3, nchar(data01$plot_name))
 length(levels(as.factor(data01$plot_name)))
 
 write("
@@ -312,6 +317,40 @@ write(paste0("
 ![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
 ", image_caption, "
 "), out_file, append=TRUE)
+
+## Now summarizing frequncy of occurrence by plots.
+freq03 <- dcast(data02, SCIENTIFIC_NAME ~ plot_name, sum)
+freq03[,2:ncol(freq03)] <- apply(freq03[,2:ncol(freq03)], c(1,2), to10)
+freq03$frequency <- apply(freq03[,2:ncol(freq03)], 1, mean)
+ 
+write("
+Summary of overall frequency of occurrence in terms of presence or absence at plots.", out_file, append=TRUE)
+write(kable(as.data.frame(as.matrix(summary(freq03$frequency))), col.names=c("value"), digits=3), out_file, append=TRUE)
+
+## How many species were detected at only one plot?
+write("
+Number of species detected at only one plot:\\", out_file, append=TRUE)
+write(sum(freq03$frequency == 1/sum(n_plots)), out_file, append=TRUE)
+
+## Histogram of overall frequencies.
+image_file <- "../documents/images/histogram_frequencies_by_plot.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width/1.618),
+ pointsize=12
+ )
+plot(hist(freq03$frequency),
+ main="Histogram of frequency of occurrence for all species by plots",
+ xlab="Frequency of occurrence"
+ )
+dev.off()
+image_caption <- "Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected divided by the total number of plots."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
+
 
 write("## Cost
 ", out_file, append=TRUE)
