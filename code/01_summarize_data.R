@@ -1,5 +1,5 @@
 
-## Script to Reshape data.
+## Script to summarize data.
 
 ## Load libraries.
 library(knitr)

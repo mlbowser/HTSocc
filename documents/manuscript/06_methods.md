@@ -41,4 +41,7 @@ A summary of identfications from all HTS occurrences from sweep net samples obta
 
 The 2,375 occurrences were downloaded on 12 November 2020 (saved search URI: <https://arctos.database.museum/saved/2020-11-12-1400_Slikok_project_metabarcoding_occurrences>).
 
-Data processing was carried out using R version 4.0.2 [@R_Core_Team_2020] and the packages knitr [@Xie2014; @Xie2015; @Xie2020] and reshape2 [@Wickham_2007].
+Data processing and analysis was carried out using R version 4.0.2 [@R_Core_Team_2020]; the packages knitr [@Xie2014; @Xie2015; @Xie2020] and reshape [@Wickham_2007], reshape2 [@Wickham_2007], and rjags [@Plummer_2019]; and JAGS version 4.3.0 [@Plummer_2003].
+
+We first tried running a simple multi-species, multi-season occupancy model provide by @Joseph_2013.
+

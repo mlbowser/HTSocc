@@ -1,0 +1,31 @@
+model
+ {
+
+ ## For each species in 1:n... 
+ for (i in 1:n) 
+  {
+  # Priors for species i 
+   for(s in 1:2) ## For each of two seasons...
+    {
+	u[i,s] ~ dunif(0,1) ## Occupancy
+	v[i,s] ~ dunif(0,1) ## Detection
+	}    
+   
+
+  # For each site in 1:j... 
+  for (j in 1:J)  
+   {
+   for (t in 1:2) ## For each season
+    {
+    Z[j,t,i] ~ dbern(u[i,t])
+
+    # For each sampling period in 1:K... (K=2)
+    for (k in 1:2) 
+     {	
+     X[j,k,t,i] ~ dbern(v[i,t]*Z[j,t,i])
+	 }
+    }  
+   }
+  d[i] <- u[i,2] - u[i,1] ## Change in occupancy from early to late season.
+  }
+ }
