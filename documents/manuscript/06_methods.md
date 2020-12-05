@@ -27,7 +27,7 @@ Invertebrates and fragments of invertebrates in the sweep net samples were separ
 
 Due to budget limitations, we processed 125 of the 160 sweep net samples. We selected all 80 samples taken from the east side of each plot (40 plots × 1 sample/plot × 2 visits/plot). To choose 45 samples from the remaining 80, we selected plots spatially. First, we chose 20 samples from plots at 1 km spacing (10 plots × 2 visits/plot), then we chose 25 of 26 samples from another 13 plots that were maximally distant from these 10 plots (13 plots × 2 visits/plot). These 45 samples from west plot halves were intended to be used for estimating occupancy metrics.
 
-Sweep net samples were shipped to RTL Genomics, Lubbock, Texas (<http://rtlgenomics.com>) for extraction and DNA sequencing steps. For details of sequencing and identifications obtained through a high-throughput sequencing analysis pipeline, see -@Bowser_et_al_2020.
+Sweep net samples were shipped to RTL Genomics, Lubbock, Texas (<http://rtlgenomics.com>) for extraction and DNA sequencing steps. For details of sequencing and identifications obtained through a high-throughput sequencing analysis pipeline, see @Bowser_et_al_2020.
 
 Invertebrate sequences that could not be confidently assigned to described species were assigned to BOLD Barcode Index Numbers [BINs, @Ratnasingham_Hebert_2013] if possible. Sequences that could be assigned to neither species nor BINs were given provisional names including labels of the molecular operational taxonomic units [MOTUs, @Blaxter_et_al_2005], e.g. "*Liriomyza* sp. SlikokOtu253". For our purposes we considered all of these entities to be species.
 
