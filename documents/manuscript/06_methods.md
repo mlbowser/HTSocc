@@ -1,9 +1,15 @@
 
 # Materials and Methods
 
+In our detailed presentation of our methods and even our thought process for why methods were chosen, we are seeking to follow the recommendations of @Devarajan_et_al_2020.
+
 ## Study area
 
-The study area, described by Bowser et al. [-@Bowser_et_al_2020], was a 938 ha portion of the Slikok Creek watershed on the Kenai National Wildlife Refuge (KNWR) with a bounding box from 60.44° to 60.47° latitude and from -151.10° to -151.03° longitude. Based on data from the U.S.\ National Land Cover Database [@Homer_et_al_2015], the land area of this study area was coverd mostly by mixed forest (29%), evergreen forest (22%), emergent herbaceous wetlands (13%), deciduous forest (12%), woody wetlands (11%), and open water (10%). Common trees in well-drained areas were white spruce (*Picea glauca* (Moench) Voss), Alaska birch (*Betula pendula* subsp. *mandshurica* (Regel) Ashburner & McAll.), quaking aspen (*Populus tremuloides* Michx.), and cottonwood (*Populus* × *hastata* Dode). Black spruce (*Picea mariana* Britton, Sterns & Poggenb.) was the dominant tree in forested wetlands. Herbaceous wetlands were characterized by mosses, sedges, and low shrubs. Shallow, eutrophic lakes (Headquarters Lake, Nordic Lake, and smaller, unnamed lakes) accounted for most of the open water in the study area.
+The study area, described by Bowser et al. [-@Bowser_et_al_2020], was a 938 ha portion of the Slikok Creek watershed on the Kenai National Wildlife Refuge (KNWR) with a bounding box from 60.44° to 60.47° latitude and from -151.10° to -151.03° longitude. 
+
+Based on data from the U.S.\ National Land Cover Database [@Homer_et_al_2015], the land area of this study area was coverd mostly by mixed forest (29%), evergreen forest (22%), emergent herbaceous wetlands (13%), deciduous forest (12%), woody wetlands (11%), and open water (10%). Common trees in well-drained areas were white spruce (*Picea glauca* (Moench) Voss), Alaska birch (*Betula pendula* subsp. *mandshurica* (Regel) Ashburner & McAll.), quaking aspen (*Populus tremuloides* Michx.), and cottonwood (*Populus* × *hastata* Dode). Black spruce (*Picea mariana* Britton, Sterns & Poggenb.) was the dominant tree in forested wetlands. Herbaceous wetlands were characterized by mosses, sedges, and low shrubs. Shallow, eutrophic lakes (Headquarters Lake, Nordic Lake, and smaller, unnamed lakes) accounted for most of the open water in the study area.
+
+This study area was chosen as an analog of a real conservation unit that could be conveniently sampled from our office at the Kenai National Wildlife Refuge, which lies at 60.4647°N, 151.0735°W within the Slikok Creek watershed. Like most conservation units and like the Kenai National Wildlife Refuge as a whole, this study area includes varied habitat types; arbitrary, artificial, and ecologically open boundaries that have no meaning to wildlife; and a range levels of human disturbance from fairly remote, undisturbed areas to developed land.
 
 Sampling design, field methods, and identification methods were detailed by @Bowser_et_al_2020, but they are summarized here.
 
@@ -15,7 +21,14 @@ A grid with 500 m spacing between points was chosen by using the coordinates of 
 
 Sampling sites were permanently marked by driving 122 cm long, 13 mm diameter SunGUARD Smart Stake™ fibreglass rods into the ground, then labelling them with aluminium tags. During the survey period, sites were also temporarily marked with high-visibility forestry flagging tape.
 
-Sweep net samples of terrestrial arthropods were collected from 14 to 17 June 2016. A second set of sweep net samples was collected from 18 July to 9 August 2016. A total of 160 sweep net samples were collected (40 plots × 2 samples/plot × 2 visits/plot).
+Sweep net samples of terrestrial arthropods were collected in two sampling periods: from 14 to 17 June 2016 and from from 18 July to 9 August 2016. During each sampling period, two samples were collected at each plot for a total of 160 sweep net samples (40 plots × 2 samples/plot × 2 visits/plot). 
+
+The timing of the first sampling window was determend by concurrent sampling of birds using variable circular plot methods. This meant that all sampling took place in the morning. Two field crews of two people were available for full work days so that all 40 plots could be visited in a short, 4 day time window.
+
+During the second sampling window, invertebrates were sampled concurrently with vegetation sampling. Even though it would have been ideal to complete the second sampling in a short time window, this was not accomplished because only a single, two person crew was available; vegetation sampling took longer than bird surveys; and because other time demands on surveyors' time meant that not every day could be devoted to this project. This resulted in a much longer sampling window of 23 days.
+
+![Number of plots surveyed per day.](../images/plots_vs_julian_day.png)\
+Number of plots surveyed per day.
 
 Arthropods were sampled within a 100 m<sup>2</sup>, 5.64 m radius, circular plot using the center stake as plot center. We split the plot into two semicircular subplots divided along the north-south axis. Each subplot was independently sweep-netted, such that the entire area was swept from the ground surface up to a height of roughly 2 m. No defined pattern of sweeping was enforced, but we ensured that all substrates and macrohabitats within reach were swept once within a time limit of 5 min per sample. We used a BioQuip™ model 7112CP 30.5 cm diameter net with a BioQuip™ model 7312AA 30.5 cm extension handle and a BioQuip™ model 7112CPA net bag with a mesh size of approximately 8 × 9 meshes/mm.
 
