@@ -15,7 +15,7 @@ Sampling design, field methods, and identification methods were detailed by @Bow
 
 ## Sampling design
 
-A grid with 500 m spacing between points was chosen by using the coordinates of the centroids of the 250 m pixels from the Alaska eMODIS product [@Jenkerson_2010], choosing every other centroid to make a grid of sites having 500 m spacing. The resulting sample frame consisted of 40 terrestrial sites.
+A systematic sampling desing was chosen. A grid with 500 m spacing between points was chosen by using the coordinates of the centroids of the 250 m pixels from the Alaska eMODIS product [@Jenkerson_2010], choosing every other centroid to make a grid of sites having 500 m spacing. The resulting sample frame consisted of 40 terrestrial sites.
 
 ## Field methods
 
@@ -38,7 +38,9 @@ All specimens were collected into a single Nalgene® model 2104-0008 wide-mouth 
 
 Invertebrates and fragments of invertebrates in the sweep net samples were separated from debris by hand under a stereomicroscope. 
 
-Due to budget limitations, we processed 125 of the 160 sweep net samples. We selected all 80 samples taken from the east side of each plot (40 plots × 1 sample/plot × 2 visits/plot). To choose 45 samples from the remaining 80, we selected plots spatially. First, we chose 20 samples from plots at 1 km spacing (10 plots × 2 visits/plot), then we chose 25 of 26 samples from another 13 plots that were maximally distant from these 10 plots (13 plots × 2 visits/plot). These 45 samples from west plot halves were intended to be used for estimating occupancy metrics.
+Due to budget limitations, we could only process 125 of the 160 sweep net samples. We considered that there was a trade-off between choosing as many sites as possible, which would be optimal for the inventory objectives of the study to document the occurrence of as many species as possible, and choosing as many samples per site as possible, which would have been betted for obtaining estimates of imperfect detection and occupancy. Because we knew so little about the diversity of terrestrial invertebrates that could be encountered, we chose to make documenting as many species as possible our priority over optimization for obtaining occupancy metrics.
+
+We selected all 80 samples taken from the east side of each plot (40 plots × 1 sample/plot × 2 visits/plot). To choose 45 samples from the remaining 80, we selected plots spatially. First, we chose 20 samples from plots at 1 km spacing (10 plots × 2 visits/plot), then we chose 25 of 26 samples from another 13 plots that were maximally distant from these 10 plots (13 plots × 2 visits/plot). These 45 samples from west plot halves were intended to be used for estimating occupancy metrics.
 
 Sweep net samples were shipped to RTL Genomics, Lubbock, Texas (<http://rtlgenomics.com>) for extraction and DNA sequencing steps. For details of sequencing and identifications obtained through a high-throughput sequencing analysis pipeline, see @Bowser_et_al_2020.
 
