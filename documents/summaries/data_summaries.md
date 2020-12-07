@@ -1,6 +1,6 @@
 # Data summaries
 
-This output was written by the R script [../../code/01_reshape_data.R](../../code/01_reshape_data.R).
+This output was written by the R script [../../code/01_reshape_data.R](../../code/01_summarize_data.R).
 
 ## Sampling summaries
 
@@ -168,6 +168,10 @@ Number of species represented by a single occurrence:\
 Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected divided by the total number of samples.
 
 
+![Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected.](../images/histogram_frequencies_by_samples.png)\
+Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected.
+
+
 Summary of overall frequency of occurrence in terms of presence or absence at plots.
 |        | value|
 |:-------|-----:|
@@ -183,6 +187,10 @@ Number of species detected at only one plot:\
 
 ![Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected divided by the total number of plots.](../images/histogram_frequencies_by_plot.png)\
 Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected divided by the total number of plots.
+
+
+![Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected.](../images/histogram_frequencies_by_numbers_of_plots.png)\
+Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected.
 
 ## Cost
 

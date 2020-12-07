@@ -60,7 +60,7 @@ The 2,375 occurrences were downloaded on 12 November 2020 (saved search URI: <ht
 
 Data processing and analysis was carried out using R version 4.0.2 [@R_Core_Team_2020]; the packages knitr [@Xie2014; @Xie2015; @Xie2020] and reshape [@Wickham_2007], reshape2 [@Wickham_2007], and rjags [@Plummer_2019]; and JAGS version 4.3.0 [@Plummer_2003].
 
-We began with data exploration. Most species were observed in only one sample and most were observed at only a single plot. 
+We began with data exploration. 
 
 ### Occupancy model assumptions
 

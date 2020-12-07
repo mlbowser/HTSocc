@@ -14,7 +14,7 @@ out_file <- "../documents/summaries/data_summaries.md"
 
 write("# Data summaries
 
-This output was written by the R script [../../code/01_reshape_data.R](../../code/01_reshape_data.R).
+This output was written by the R script [../../code/01_reshape_data.R](../../code/01_summarize_data.R).
 ", out_file)
 
 write("## Sampling summaries
@@ -318,6 +318,34 @@ write(paste0("
 ", image_caption, "
 "), out_file, append=TRUE)
 
+## Histogram of overall frequencies expressed as numbers of samples in which a species was observed.
+image_file <- "../documents/images/histogram_frequencies_by_samples.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width),
+ pointsize=12
+ )
+freqhist <- hist(freq01$frequency*125,
+ breaks=(0:(max(freq01$frequency)*125))+0.5) 
+freqhist <- hist(freq01$frequency*125,
+ breaks=(0:(max(freq01$frequency)*125))+0.5,
+ main="Histogram of frequency of occurrence for all species",
+ xlab="Number of samples in which a species was observed",
+ border=freqhist$counts > 0
+ )
+dev.off()
+
+image_caption <- "Histogram of overall frequencies of occurrences. This frequency was determined as the number of samples in which a species was detected."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
+
+## Just want to look at frequencies in terms of numbers of samples in which a species was observed.
+freq01$n_samples <- freq01$frequency*125
+freq01[order(-freq01$frequency),c("species", "n_samples")]
+
 ## Now summarizing frequncy of occurrence by plots.
 freq03 <- dcast(data02, SCIENTIFIC_NAME ~ plot_name, sum)
 freq03[,2:ncol(freq03)] <- apply(freq03[,2:ncol(freq03)], c(1,2), to10)
@@ -340,7 +368,7 @@ png(filename=image_file,
  height=round(width/1.618),
  pointsize=12
  )
-plot(hist(freq03$frequency),
+plot(hist(freq03$frequency ),
  main="Histogram of frequency of occurrence for all species by plots",
  xlab="Frequency of occurrence"
  )
@@ -351,6 +379,33 @@ write(paste0("
 ", image_caption, "
 "), out_file, append=TRUE)
 
+
+## Histogram of overall by plot in terms of number of plots at which a species was observed.
+image_file <- "../documents/images/histogram_frequencies_by_numbers_of_plots.png"
+width <- 600
+png(filename=image_file,
+ width=width,
+ height=round(width),
+ pointsize=12
+ )
+freqplothist <- hist(freq03$frequency*40,
+ breaks=(0:(max(freq03$frequency)*40))+0.5) 
+freqplothist <- hist(freq03$frequency*40,
+ breaks=(0:(max(freq03$frequency)*40))+0.5,
+ main="Histogram of frequency of occurrence for all species",
+ xlab="Number of plots at which a species was observed",
+ border=freqplothist$counts > 0
+ )
+dev.off()
+image_caption <- "Histogram of frequncy of occurence by plot. This frequency was determined as the number of plots at which a species was detected."
+write(paste0("
+![", image_caption, "](", gsub("../documents/", "../", image_file), ")\\
+", image_caption, "
+"), out_file, append=TRUE)
+
+## Just want to look at frequencies in terms of numbers of plots at which a species was observed.
+freq01$n_plots <- freq03$frequency*40
+freq01[order(-freq01$frequency),c("SCIENTIFIC_NAME", "n_plots")]
 
 write("## Cost
 ", out_file, append=TRUE)
