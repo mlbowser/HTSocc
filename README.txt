@@ -12,9 +12,7 @@ DOCUMENTING DISTRIBUTIONS OF HYPERDIVERSE GROUPS (TERRESTRIAL INVERTEBRATES) THR
 Summary
 
 This is a repository for a draft manuscript on occupancy modeling using
-terrestrial invertebrate data from Bowser et al. (2020). It is currently
-being formatted for submission to the Journal of the Entomological
-Society of British Columbia.
+terrestrial invertebrate data from Bowser et al. (2020).
 
 The directory structure conforms to the recommended file structure of
 the Alaska Region Data Stewardship Team (2019).

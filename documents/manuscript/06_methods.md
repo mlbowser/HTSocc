@@ -15,7 +15,7 @@ Sampling design, field methods, and identification methods were detailed by @Bow
 
 ## Sampling design
 
-A systematic sampling desing was chosen. A grid with 500 m spacing between points was chosen by using the coordinates of the centroids of the 250 m pixels from the Alaska eMODIS product [@Jenkerson_2010], choosing every other centroid to make a grid of sites having 500 m spacing. The resulting sample frame consisted of 40 terrestrial sites.
+We chose a systematic sampling design because of its simplicity and because could be used to obtained unbiased estimates representing the entire study area. A grid with 500 m spacing between points was chosen by using the coordinates of the centroids of the 250 m pixels from the Alaska eMODIS product [@Jenkerson_2010], choosing every other centroid to make a grid of sites having 500 m spacing. The resulting sample frame consisted of 40 terrestrial sites.
 
 ## Field methods
 
@@ -38,17 +38,17 @@ All specimens were collected into a single Nalgene® model 2104-0008 wide-mouth 
 
 Invertebrates and fragments of invertebrates in the sweep net samples were separated from debris by hand under a stereomicroscope. 
 
-Due to budget limitations, we could only process 125 of the 160 sweep net samples. We considered that there was a trade-off between choosing as many sites as possible, which would be optimal for the inventory objectives of the study to document the occurrence of as many species as possible, and choosing as many samples per site as possible, which would have been betted for obtaining estimates of imperfect detection and occupancy. Because we knew so little about the diversity of terrestrial invertebrates that could be encountered, we chose to make documenting as many species as possible our priority over optimization for obtaining occupancy metrics.
+Due to budget limitations, we could only process 125 of the 160 sweep net samples. We considered that there was a trade-off between choosing as many sites as possible, which would be optimal for the inventory objectives of the study to document the occurrence of as many species as possible, and choosing as many samples per site as possible, which would have been better for obtaining estimates of imperfect detection and occupancy. Because we knew so little about the diversity of terrestrial invertebrates that could be encountered, we chose to make documenting as many species as possible our priority over optimization for obtaining occupancy metrics.
 
 We selected all 80 samples taken from the east side of each plot (40 plots × 1 sample/plot × 2 visits/plot). To choose 45 samples from the remaining 80, we selected plots spatially. First, we chose 20 samples from plots at 1 km spacing (10 plots × 2 visits/plot), then we chose 25 of 26 samples from another 13 plots that were maximally distant from these 10 plots (13 plots × 2 visits/plot). These 45 samples from west plot halves were intended to be used for estimating occupancy metrics.
 
 Sweep net samples were shipped to RTL Genomics, Lubbock, Texas (<http://rtlgenomics.com>) for extraction and DNA sequencing steps. For details of sequencing and identifications obtained through a high-throughput sequencing analysis pipeline, see @Bowser_et_al_2020.
 
+## Molecular identifications
+
 Invertebrate sequences that could not be confidently assigned to described species were assigned to BOLD Barcode Index Numbers [BINs, @Ratnasingham_Hebert_2013] if possible. Sequences that could be assigned to neither species nor BINs were given provisional names including labels of the molecular operational taxonomic units [MOTUs, @Blaxter_et_al_2005], e.g. "*Liriomyza* sp. SlikokOtu253". For our purposes we considered all of these entities to be species.
 
 We sought to follow the guidelines of @Penev_et_al_2017 for publication of biodiversity data. Species occurrence data have been made available via Arctos (<https://arctosdb.org/>), where they are associated together via an Arctos project (<http://arctos.database.museum/project/10002227>). These occurrence data on Arctos are also provided to the Global Biodiversity Information Facility (<https://www.gbif.org/>).
-
-## Data analysis
 
 In the time since @Bowser_et_al_2020 was published, a handfull of identifications of the records on Arctos have been improved based on new data that became available in the reference databases [@Ratnasingham_Hebert_2007; @Clark_et_al_2016].
 
@@ -56,7 +56,25 @@ A summary of identfications from all HTS occurrences from sweep net samples obta
 
 The 2,375 occurrences were downloaded on 12 November 2020 (saved search URI: <https://arctos.database.museum/saved/2020-11-12-1400_Slikok_project_metabarcoding_occurrences>).
 
+## Data analysis
+
 Data processing and analysis was carried out using R version 4.0.2 [@R_Core_Team_2020]; the packages knitr [@Xie2014; @Xie2015; @Xie2020] and reshape [@Wickham_2007], reshape2 [@Wickham_2007], and rjags [@Plummer_2019]; and JAGS version 4.3.0 [@Plummer_2003].
 
-We first tried running a simple multi-species, multi-season occupancy model provide by @Joseph_2013.
+We began with data exploration. Most species were observed in only one sample and most were observed at only a single plot. 
+
+### Occupancy model assumptions
+
+We considered multispecies occupancy model assumptions as presented by @Devarajan_et_al_2020. 
+
+A challenge of applying occupancy models to ephemeral, highly vagile animals like winged insects is that assumptions of geographic and demographic closure can seldom be satisfied. The population sizes of many insects can change rapidly over a short time, for example with aphids. The life stages and abundances of some insects are highly seasonal, in some species with adults appearing over a brief seasonal time window. In addition, many species are winged, phoretic on winged species, or can be wind disperesed by ballooning. These species can move freely into and out of the study area on a time scale of hours and they can move onto or out of plots in a matter of seconds.
+
+We were aware that many species in our study area would be unlikely to be detected within our two temporal sampling windows. For example, the stonefly *Utacapnia columbiana* (Claassen, 1924) is abundant in large, glacial streams of the area. The adults emerge in large numbers in March through May and disperse over our study area, where they can be found on vegetation, but the adults were gone by the time we began sampling on 14 June.
+
+Because our "revisits" at each sampling event were spatial replicates taken within 10 min. of each other, there was some degree of closure between the two revisits. Also, ours were removal methods where individuals collected in one sample would not be available for subsequent sampling, but it seems reasonable that one 50 m<sup>2</sup> sweep net sample would not remove enough of the invertebrate population to affect the next sampling event one month or more later.
+
+Because we assume that geographic and geographic closure would not apply to at least many terrestrial invertebrate species, it may be appropriate to use staggered-entry occupancy models [@Kendall_et_al_2013].
+
+### Occupancy models
+
+We first tried running a simple multi-species, multi-season occupancy model provided by @Joseph_2013.
 

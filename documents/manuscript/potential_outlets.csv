@@ -1,0 +1,6 @@
+journal_title,journal_home_URL,author_instructions_URL,peer_reviewed,cost_per_article,currency,open_access,CSL_file_available,notes
+bioRxiv,https://www.biorxiv.org/,https://www.biorxiv.org/submit-a-manuscript,no,0,,yes,,
+Journal of Fish and Wildlife Management,https://www.fws.gov/science/publicationsys.html#JFWM,https://www.fws.gov/science/guideforauthors.html,yes,0,,yes,no,
+Journal of Insect Conservation,https://www.springer.com/journal/10841,https://www.springer.com/journal/10841/submission-guidelines,yes,3260,USD,yes,,
+Journal of the Entomological Society of British Columbia,https://journal.entsocbc.ca/index.php/journal,https://journal.entsocbc.ca/index.php/journal/about/submissions#authorGuidelines,yes,350,CAD,yes,yes,canadian-journal-of-plant-science.csl seems to work for this one. Cost given is for members.
+Proceedings of the Entomological Society of Washington,https://entsocwash.org/?Action=Show_Proceedings,https://entsocwash.org/default.asp?Action=Show_Proceedings&ID=Instructions,yes,0,,no,no?,Cost of publication is free for members.
