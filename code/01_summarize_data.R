@@ -404,8 +404,8 @@ write(paste0("
 "), out_file, append=TRUE)
 
 ## Just want to look at frequencies in terms of numbers of plots at which a species was observed.
-freq01$n_plots <- freq03$frequency*40
-freq01[order(-freq01$frequency),c("SCIENTIFIC_NAME", "n_plots")]
+freq03$n_plots <- freq03$frequency*40
+freq03[order(-freq03$frequency),c("SCIENTIFIC_NAME", "n_plots")]
 
 write("## Cost
 ", out_file, append=TRUE)

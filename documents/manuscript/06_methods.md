@@ -17,6 +17,8 @@ Sampling design, field methods, and identification methods were detailed by @Bow
 
 We chose a systematic sampling design because of its simplicity and because could be used to obtained unbiased estimates representing the entire study area. A grid with 500 m spacing between points was chosen by using the coordinates of the centroids of the 250 m pixels from the Alaska eMODIS product [@Jenkerson_2010], choosing every other centroid to make a grid of sites having 500 m spacing. The resulting sample frame consisted of 40 terrestrial sites.
 
+Our basic sampling design was a space-for-time design as defined by @Kery_Royle_2016, where plots were divided into subplots and the subplots were sampled essentially simultaneously.
+
 ## Field methods
 
 Sampling sites were permanently marked by driving 122 cm long, 13 mm diameter SunGUARD Smart Stake™ fibreglass rods into the ground, then labelling them with aluminium tags. During the survey period, sites were also temporarily marked with high-visibility forestry flagging tape.
