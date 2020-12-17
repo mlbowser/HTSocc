@@ -17,7 +17,7 @@ Sampling design, field methods, and identification methods were detailed by @Bow
 
 We chose a systematic sampling design because of its simplicity and because could be used to obtained unbiased estimates representing the entire study area. A grid with 500 m spacing between points was chosen by using the coordinates of the centroids of the 250 m pixels from the Alaska eMODIS product [@Jenkerson_2010], choosing every other centroid to make a grid of sites having 500 m spacing. The resulting sample frame consisted of 40 terrestrial sites.
 
-Our basic sampling design was a space-for-time design as defined by @Kery_Royle_2016, where plots were divided into subplots and the subplots were sampled essentially simultaneously.
+Our basic sampling design was a space-for-time design as defined by @Kery_Royle_2016, where plots were divided into subplots and the subplots were sampled essentially simultaneously. At each site we established a  5.64 m radius, approximately 100 m<sup>2</sup>, circular plot, with a pixel centroid at the center of the circular plot. We split the plot into two semicircular, approximately 50 m<sup>2</sup> subplots divided along the north-south axis.
 
 ## Field methods
 
@@ -32,7 +32,7 @@ During the second sampling window, invertebrates were sampled concurrently with 
 ![Number of plots surveyed per day.](../images/plots_vs_julian_day.png)\
 Number of plots surveyed per day.
 
-Arthropods were sampled within a 100 m<sup>2</sup>, 5.64 m radius, circular plot using the center stake as plot center. We split the plot into two semicircular subplots divided along the north-south axis. Each subplot was independently sweep-netted, such that the entire area was swept from the ground surface up to a height of roughly 2 m. No defined pattern of sweeping was enforced, but we ensured that all substrates and macrohabitats within reach were swept once within a time limit of 5 min per sample. We used a BioQuip™ model 7112CP 30.5 cm diameter net with a BioQuip™ model 7312AA 30.5 cm extension handle and a BioQuip™ model 7112CPA net bag with a mesh size of approximately 8 × 9 meshes/mm.
+Arthropods were sampled a 5.64 m radius circular plot using the center stake as plot center. We split the plot into two semicircular subplots divided along the north-south axis. Each subplot was independently sweep-netted, such that the entire area was swept from the ground surface up to a height of roughly 2 m. No defined pattern of sweeping was enforced, but we ensured that all substrates and macrohabitats within reach were swept once within a time limit of 5 min per sample. We used a BioQuip™ model 7112CP 30.5 cm diameter net with a BioQuip™ model 7312AA 30.5 cm extension handle and a BioQuip™ model 7112CPA net bag with a mesh size of approximately 8 × 9 meshes/mm.
 
 All specimens were collected into a single Nalgene® model 2104-0008 wide-mouth 250 ml bottle containing UniGard -100 propylene glycol antifreeze.
 
