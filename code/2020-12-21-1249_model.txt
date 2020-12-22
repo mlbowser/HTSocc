@@ -1,0 +1,23 @@
+
+model {
+
+# Priors
+ mean.psi ~ dunif(0,1)
+ betapsi0 <- logit(mean.psi)
+ betapsitime1 ~ dunif(-20,20)
+ p ~ dunif(0,1)
+ 
+# Likelihood
+for (i in 1:M) 
+ {
+ for (t in 1:T)
+  {
+  logit(psi[i,t]) <- betapsi0 + betapsitime1*jdate[i,t]
+  z[i,t] ~ dbern(psi[i,t])
+  for (j in 1:J) 
+   {
+   y[i,t,j] ~ dbern(z[i,t]*p)
+   }
+  }
+ } 
+}
