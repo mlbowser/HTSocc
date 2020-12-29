@@ -1,0 +1,25 @@
+
+model {
+
+# Priors
+ mean.psi.forest ~ dunif(0,1)
+ mean.psi.nonforest ~ dunif(0,1)
+ betapsiforest0 <- logit(mean.psi.forest)
+ betapsinonforest0 <- logit(mean.psi.nonforest)
+ betapsitime1 ~ dunif(-20,20)
+ p ~ dunif(0,1)
+ 
+# Likelihood
+for (i in 1:M) 
+ {
+ for (t in 1:T)
+  {
+  logit(psi[i,t]) <- betapsiforest0 + betapsinonforest0*nonforest[i] + betapsitime1*jdate[i,t]
+  z[i,t] ~ dbern(psi[i,t])
+  for (j in 1:J) 
+   {
+   y[i,t,j] ~ dbern(z[i,t]*p)
+   }
+  }
+ } 
+}
