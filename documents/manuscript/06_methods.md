@@ -60,7 +60,7 @@ The 2,375 occurrences were downloaded on 12 November 2020 (saved search URI: <ht
 
 ## Data analysis
 
-Data processing and analysis was carried out using R version 4.0.2 [@R_Core_Team_2020]; the packages knitr [@Xie2014; @Xie2015; @Xie2020] and reshape [@Wickham_2007], reshape2 [@Wickham_2007], and rjags [@Plummer_2019]; and JAGS version 4.3.0 [@Plummer_2003].
+Data processing and analysis was carried out using JAGS version 4.3.0 [@Plummer_2003], R versions 4.0.2 and 4.0.4 [@RCoreTeam2020; @RCoreTeam2021] and the R packages jagsUI version 1.5.1 [@Kellner2019],  knitr version 1.29 [@Xie2014; @Xie2015; @Xie2020], maptools version 1.0.2 [@BivandLewin-Koh2020], MCMCglmm version 2.30 [@Hadfield2010], reshape version 0.8.8 [@Wickham_2007], reshape2 [@Wickham_2007], and rjags [@Plummer_2019].
 
 We began with data exploration. 
 
