@@ -1,0 +1,50 @@
+## Now I am trying the community occupancy model with bivariate species specific random effects from Kery and Royle (2016), p. 668.
+
+model {
+
+# Priors
+for (k in 1:nspec){
+ lpsi[k] <- eta[k,1]
+ lp[k] <- eta[k,2]
+ eta[k, 1:2] ~dmnorm(mu.eta[], Omega[,])
+ }
+
+# Hyperpriors
+for (v in 1:2) {
+ mu.eta[v] <- log(probs[v]/(1-probs[v]))
+ probs[v] ~ dunif(0,1)
+ }
+
+# Prior for variance-covariance matrix
+Omega[1:2, 1:2] ~ dwish(R[,], df)
+Sigma[1:2, 1:2] <- inverse(Omega[,])
+
+# Ecological model for latent occurrence z (process model)
+for (k in 1:nspec){
+ logit(psi[k]) <- lpsi[k]
+ for (i in 1:M) {
+  z[k,i] ~dbern(psi[k])
+  }
+ }
+
+# Observation model for observed data
+for (k in 1:nspec){
+ logit(p[k]) <- lp[k]
+ for (i in 1:M){
+  for (j in 1:J)
+   {
+   y[k,i,j] ~dbern(z[k,i]*p[k])
+   } 
+  }
+ }
+ 
+# Derived quantities
+rho <- Sigma[1,2]/sqrt(Sigma[1,1]*Sigma[2,2])
+for (k in 1:nspec){
+ Nocc.fs[k] <- sum(z[k,]) # Number of occupied sites by each species.
+ } 
+for (i in 1:M){
+ Nsite[i] <- sum(z[,i]) # Number of species at each site.
+ }
+ 
+}
